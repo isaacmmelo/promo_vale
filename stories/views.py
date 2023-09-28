@@ -7,4 +7,4 @@ def lista_stories(request):
 
 def detalhes_stories(request, pk):
     story = get_object_or_404(Stories, pk=pk)
-    return render(request, 'stories/detalhes_stories.html', {'stories': story})
+    return render(request, 'stories/detalhes_stories.html', {'stories': stories})

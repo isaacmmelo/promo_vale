@@ -4,18 +4,15 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from .forms import RegistroForm, LoginForm
 
-def configuracoes(request):
-    # Sua lógica para a view de configurações aqui
-    return render(request, 'usuario/configuracoes.html')
 
-def registro(request):
+
+def registro_usuario(request):
     if request.method == 'POST':
         form = RegistroForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
             messages.success(request, 'Registro realizado com sucesso!')
-            # Redirecionar para o perfil do usuário após o registro
             return redirect('perfil')
     else:
         form = RegistroForm()
@@ -39,6 +36,6 @@ def fazer_login(request):
     return render(request, 'usuario/login.html', {'form': form})
 
 @login_required
-def perfil(request):
+def perfil_usuario(request):
     user = request.user
     return render(request, 'usuario/perfil.html', {'user': user})

@@ -1,9 +1,8 @@
-# No arquivo usuario/forms.py
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import password_validation
 from django.core.exceptions import ValidationError
-from django.contrib.auth.models import User
+from .models import CustomUser  # Importe o modelo de usuário personalizado do seu aplicativo
 
 class RegistroForm(UserCreationForm):
     email = forms.EmailField(
@@ -35,9 +34,3 @@ class RegistroForm(UserCreationForm):
 class LoginForm(forms.Form):
     email = forms.EmailField(max_length=254, required=True)
     senha = forms.CharField(widget=forms.PasswordInput, required=True)
-    
-    raise forms.ValidationError(
-    "A senha deve conter pelo menos 8 caracteres, incluindo pelo menos uma letra maiúscula, uma letra minúscula, um dígito e um caractere especial (!@#$%^&*()_+-=[]{}|;:,.<>?)."
-)
-
-

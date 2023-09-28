@@ -8,5 +8,5 @@ def detalhes_mercado(request, pk):
     return render(request, 'mercado/detalhes_mercado.html', {'mercado': mercado})
 
 def lista_mercado(request):
-    mercados = Mercado.objects.all()  # Corrija o nome da variável para 'mercados'
-    return render(request, 'mercado/lista_mercado.html', {'mercados': mercados})
+    mercado = Mercado.objects.all()  # Corrija o nome da variável para 'mercados'
+    return render(request, 'mercado/lista_mercado.html', {'mercado': mercado})
