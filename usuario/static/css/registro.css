@@ -1,0 +1,122 @@
+/* Estilos para a página de registro */
+
+body {
+    background-color: #f2f2f2;
+    font-family: 'Open Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.testbox {
+    width: 400px;
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.form-group label {
+    flex: 1;
+    text-align: right;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="tel"],
+.form-group input[type="checkbox"] {
+    flex: 2;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="tel"]:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.form-group input[type="checkbox"] {
+    flex: 1;
+    width: auto;
+    margin: 0;
+}
+
+.form-group input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: #ff0000;
+    margin-top: 10px;
+}
+
+/* Estilos para o link de login */
+.login-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para rodapé da página */
+.footer {
+    text-align: center;
+    position: fixed; /* Alteramos de "absolute" para "fixed" */
+    bottom: 0;
+    left: 0; /* Adicionamos para alinhar à esquerda */
+    right: 0; /* Adicionamos para alinhar à direita */
+    width: 100%;
+    padding: 5px 0; /* Corrigimos a sintaxe do padding */
+    background-color: #f2f2f2;
+    color: #888;
+}

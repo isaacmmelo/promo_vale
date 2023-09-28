@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/perfil.css' %}">
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Seu Perfil</h1>
+        <div class="profile-info">
+            <p><strong>Nome:</strong> {{ user.username }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <!-- Adicione mais informações do usuário conforme necessário -->
+        </div>
+        <a href="{% url 'logout' %}" class="logout-link">Sair</a>
+        
+        <!-- Botão para a página de promoções -->
+        <a href="{% url 'promocoes' %}" class="promo-link">Ver Promoções</a>
+    </div>
+    <footer class="footer">
+        &copy; 2023 PromoVale. Todos os direitos reservados.
+    </footer>
+</body>
+</html>

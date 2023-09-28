@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoções</title>
+    <!-- Seus estilos CSS aqui -->
+</head>
+<body>
+    <header>
+        <!-- Barra de navegação (opcional) -->
+        <nav>
+            <ul>
+                <li><a href="/">Página Inicial</a></li>
+                <li><a href="/usuario/perfil/">Seu Perfil</a></li>
+                <!-- Outros links de navegação -->
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="promo-container">
+        <h1>Promoções</h1>
+        
+        <!-- Lista de promoções -->
+        <ul class="promo-list">
+            <li>
+                <h2>Nome da Promoção 1</h2>
+                <p>Descrição da Promoção 1.</p>
+                <p>Preço com desconto: R$ XX,XX</p>
+                <a href="#">Detalhes</a>
+            </li>
+            <li>
+                <h2>Nome da Promoção 2</h2>
+                <p>Descrição da Promoção 2.</p>
+                <p>Preço com desconto: R$ XX,XX</p>
+                <a href="#">Detalhes</a>
+            </li>
+            <!-- Adicione mais promoções conforme necessário -->
+        </ul>
+
+        <!-- Link para a página de promoções -->
+        <a href="{% url 'promocoes' %}" class="promo-link">Ver Promoções</a>
+    </div>
+
+    <footer class="footer">
+        &copy; 2023 PromoVale. Todos os direitos reservados.
+    </footer>
+</body>
+</html>
