@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações</title>
+    
+</head>
+<body>
+    <header>
+        <h1>Configurações do Usuário</h1>
+    </header>
+
+    <main>
+        <section class="settings-container">
+            <h2>Informações da Conta</h2>
+            <!-- Formulário de configurações da conta -->
+            <form method="POST" action="{% url 'configuracoes' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Nome de usuário:</label>
+                    <input type="text" id="username" name="username" value="{{ user.username }}" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="email">Endereço de email:</label>
+                    <input type="email" id="email" name="email" value="{{ user.email }}" readonly>
+                </div>
+                <!-- Adicione campos adicionais aqui, como senha, nome, etc. -->
+                <div class="form-group">
+                    <input type="submit" value="Salvar Alterações">
+                </div>
+            </form>
+        </section>
+
+        <!-- Opções adicionais de configuração aqui -->
+    </main>
+
+    <footer class="footer">
+        <a href="{% url 'logout' %}" class="logout-link">Sair</a>
+    </footer>
+</body>
+</html>

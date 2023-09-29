@@ -13,15 +13,8 @@
     <div class="testbox">
         <h1>Cadastro</h1>
 
-        <form action="/" id="formulario-de-registro">
-            <hr>
-            <div class="tipo-de-conta">
-                <input type="radio" value="Pessoal" id="radioUm" name="conta" checked/>
-                <label for="radioUm" class="radio">Pessoal</label>
-                <input type="radio" value="Empresa" id="radioDois" name="conta" />
-                <label for="radioDois" class="radio">Empresa</label>
-            </div>
-            <hr>
+        <form action="usuario/registrar" id="formulario-de-registro" method="POST">
+          
             <div class="grupo-de-formulario">
                 <label id="icone-email" for="email"><i class="icon-envelope"></i></label>
                 <input type="text" name="email" id="email" placeholder="Email" required/>
@@ -59,7 +52,13 @@
         </form>
     </div>
 
-    <script>
+    <div class="mensagem">
+        {% if msg %}
+            <p>{{ msg }}</p>
+        {% endif %}
+    </div>
+
+    {% comment %} <script>
         document.getElementById('formulario-de-registro').addEventListener('submit', function(event) {
             event.preventDefault();
 
@@ -79,9 +78,9 @@
             console.log('Senha:', senha);
             console.log('Telefone:', telefone);
             console.log('É WhatsApp?', eWhatsApp);
-            console.log('Gênero:', genero);
-        });
-    </script>
+            console.log('Gênero:', genero); {% endcomment %}
+        {% comment %} });
+    </script> {% endcomment %}
     <footer class="footer">
         &copy; 2023 PromoVale. Todos os direitos reservados.
     </footer>
