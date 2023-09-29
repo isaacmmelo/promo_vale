@@ -7,3 +7,4 @@ class Cliente(models.Model):
     whatsapp = models.BooleanField(default=False)
     sexo = models.CharField(max_length=10, choices=[('masculino', 'Masculino'), ('feminino', 'Feminino')], blank=True, null=True)
     senha_adicional = models.CharField(max_length=128, blank=True, null=True)
+

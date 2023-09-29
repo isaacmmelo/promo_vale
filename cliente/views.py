@@ -1,11 +1,9 @@
-from django.shortcuts import render
-
-# Create your views here.
-def cadastro(request):
-    return render(request, 'usuario/cadastro.html')
-
-from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
+from .models import Cliente
+
+def cadastro(request):
+    return render(request, 'cliente/cadastro.html')
 
 def cadastrar(request):
     if request.method == 'POST':
@@ -16,43 +14,52 @@ def cadastrar(request):
         whatsapp = request.POST.get("whatsapp", False)  # Pode ser "Sim" ou não definido
         sexo = request.POST.get("genero", "")  # Pode ser "Masculino" ou "Feminino"
 
-        # Criação de um novo usuário
-        usuario = User.objects.create_user(username=email, password=senha)
+        # Verifica se o usuário já existe
+        if Cliente.objects.filter(email=email).exists():
+            msg = "Erro: Este email já está cadastrado."
+            return render(request, 'cliente/cadastro.html', {'msg': msg})
+        
+        cliente = Cliente
+        cliente.email = email
+        cliente.senha_adicional = senha
+        cliente.telefone = telefone
+        cliente.whatsapp = whatsapp
+        cliente.sexo = sexo
 
-        # Salvar informações adicionais no perfil do usuário
-        usuario.userprofile.telefone = telefone
-        usuario.userprofile.whatsapp = whatsapp == "Sim"
-        usuario.userprofile.sexo = sexo
-                
         try:
-            usuario.userprofile.save()
+            resultado = cliente.save()
         except:
-            msg = "Erro no cadastro"
-            return redirect('usuario/cadastro.html') 
+            msg = "Erro no cadastro, tente novamente"
+            return render(request, 'cliente/cadastro.html', {'msg': msg}) 
         else:
-            msg = "Cadastro realizado com sucesso"
-            return render(request, 'usuario/login.html',msg) 
- 
+            msg = "Cadastro realizado com sucesso! Faça o login"
+            return render(request, 'cliente/login.html', {'msg': msg}) 
 
 def fazer_login(request):
     if request.method == 'POST':
         # Processar os dados do formulário de login aqui
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('perfil')
-    elif request.method == 'GET' and request.user.is_authenticated:
-        # Se o usuário já estiver autenticado e acessar a página de login,
-        # redirecioná-lo para a página de perfil ou outra página apropriada.
-        return redirect('perfil')
-    return render(request, 'fazer_login.html')
+        email = request.POST['email']
+        senha = request.POST['senha']
+               
+        if Cliente.objects.filter(email=email).exists():
+            cliente = Cliente.get(email=email)
+            if (senha == cliente.senha):
+                #logar
+                print('logado')
+                #redirecion para a página inicial
+            else:
+                #retornar senha incorreta
+                msg = "Senha incorreta"
+                return render(request, 'cliente/login.html', {'msg': msg})
+        else:
+            #retornar usuario não cadastrado
+            msg = "Usuario não encontrado"
+            return render(request, 'cliente/login.html', {'msg': msg}) 
 
 def perfil(request):
     # A função de perfil requer que o usuário esteja autenticado
-    return render(request, 'perfil.html')
+    return render(request, 'cliente/perfil.html')
 
 def fazer_logout(request):
     logout(request)
-    return redirect('login')
+    return redirect('cliente/login.html')

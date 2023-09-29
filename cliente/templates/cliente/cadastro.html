@@ -13,8 +13,8 @@
     <div class="testbox">
         <h1>Cadastro</h1>
 
-        <form action="usuario/registrar" id="formulario-de-registro" method="POST">
-          
+        <form action="{% url 'registrar' %}" id="formulario-de-registro" method="POST">
+            {% csrf_token %}
             <div class="grupo-de-formulario">
                 <label id="icone-email" for="email"><i class="icon-envelope"></i></label>
                 <input type="text" name="email" id="email" placeholder="Email" required/>

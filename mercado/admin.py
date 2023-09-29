@@ -13,6 +13,6 @@ class MercadoAdmin(admin.ModelAdmin):
 
 
 
-
 # ...
 admin.site.register(Mercado)
+

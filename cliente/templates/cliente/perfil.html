@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil do Usuário</title>
+    <title>Perfil do Cliente</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/perfil.css' %}">
 </head>
 <body>
@@ -13,6 +13,7 @@
         <div class="profile-info">
             <p><strong>Nome:</strong> {{ user.username }}</p>
             <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>telefone:</strong> {{ user.telefone }}</p>
             <!-- Adicione mais informações do usuário conforme necessário -->
         </div>
         <a href="{% url 'logout' %}" class="logout-link">Sair</a>

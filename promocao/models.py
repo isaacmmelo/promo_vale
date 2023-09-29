@@ -5,6 +5,8 @@ class Promocao(models.Model):
     descricao = models.TextField()
     data_inicio = models.DateField()
     data_fim = models.DateField()
+    mercado = models.ForeignKey("mercado.Mercado", on_delete=models.CASCADE)
+    
 
     def __str__(self):
         return self.titulo

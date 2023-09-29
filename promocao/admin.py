@@ -8,5 +8,4 @@ class PromocaoAdmin(admin.ModelAdmin):
     ]
 
 
-
 admin.site.register(Promocao)
