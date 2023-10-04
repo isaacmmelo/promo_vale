@@ -120,3 +120,31 @@ form {
     background-color: #f2f2f2;
     color: #888;
 }
+
+/* Estilo para o pop-up */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza o pop-up na tela */
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra suave ao redor do pop-up */
+    z-index: 9999; /* Garante que o pop-up esteja na frente de outros elementos */
+    text-align: center; /* Alinha o conteúdo centralmente */
+}
+
+/* Estilo para o botão dentro do pop-up */
+.popup button {
+    margin-top: 10px; /* Espaço superior para separar o botão do conteúdo */
+    padding: 5px 10px; /* Preenchimento interno do botão */
+    background-color: #007BFF; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    border: none; /* Remove a borda do botão */
+    cursor: pointer; /* Altera o cursor ao passar sobre o botão */
+}
+
+/* Estilo do botão ao passar o mouse por cima */
+.popup button:hover {
+    background-color: #0056b3; /* Cor de fundo alterada quando o mouse passa sobre o botão */
+}

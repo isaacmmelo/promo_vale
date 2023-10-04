@@ -32,7 +32,7 @@
             
             <div class="grupo-de-formulario">
                 <label id="icone-telefone" for="telefone"><i class="icon-phone"></i></label>
-                <input type="text" name="telefone" id="telefone" placeholder="Telefone" required/>
+                <input type="text" name="numero_telefone" id="numero_telefone" placeholder="Telefone" required/>
             </div>
             
             <div class="grupo-de-formulario">
@@ -52,11 +52,47 @@
         </form>
     </div>
 
-    <div class="mensagem">
-        {% if msg %}
-            <p>{{ msg }}</p>
-        {% endif %}
-    </div>
+    <script>
+        // Função para exibir a mensagem como um pop-up
+        function exibirMensagemPopUp(msg) {
+            // Crie um elemento de div para a mensagem pop-up
+            var popup = document.createElement('div');
+            popup.className = 'popup';
+            
+            // Crie um elemento de parágrafo para a mensagem
+            var mensagem = document.createElement('p');
+            mensagem.textContent = msg;
+            
+            // Crie um botão de fechar
+            var botaoFechar = document.createElement('button');
+            botaoFechar.textContent = 'Fechar';
+            
+            // Adicione a mensagem e o botão de fechar à div do pop-up
+            popup.appendChild(mensagem);
+            popup.appendChild(botaoFechar);
+            
+            // Adicione a div do pop-up ao corpo do documento
+            document.body.appendChild(popup);
+            
+            // Adicione um evento de clique ao botão de fechar
+            botaoFechar.addEventListener('click', function() {
+                // Remova o pop-up ao clicar no botão de fechar
+                document.body.removeChild(popup);
+            });
+        }
+        
+        // Exiba a mensagem quando a página for carregada
+        window.addEventListener('load', function() {
+            // A mensagem que você deseja exibir
+            var msg = "{{ msg }}"; // Substitua "{{ msg }}" pela mensagem que você deseja exibir
+            
+            // Verifique se a mensagem não está vazia antes de exibi-la
+            if (msg) {
+                exibirMensagemPopUp(msg);
+            }
+        });
+    </script>
+
 
     {% comment %} <script>
         document.getElementById('formulario-de-registro').addEventListener('submit', function(event) {
