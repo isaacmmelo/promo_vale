@@ -1,124 +1,187 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/registro.css' %}">
-</head>
-<body>
-    <div class="testbox">
-        <h1>Cadastro</h1>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/registro.css' %}"
+    />
+  </head>
 
-        <form action="{% url 'registrar' %}" id="formulario-de-registro" method="POST">
-            {% csrf_token %}
-            <div class="grupo-de-formulario">
-                <label id="icone-email" for="email"><i class="icon-envelope"></i></label>
-                <input type="text" name="email" id="email" placeholder="Email" required/>
-            </div>
-            
-            <div class="grupo-de-formulario">
-                <label id="icone-nome" for="nome"><i class="icon-user"></i></label>
-                <input type="text" name="nome" id="nome" placeholder="Nome" required/>
-            </div>
-            
-            <div class="grupo-de-formulario">
-                <label id="icone-senha" for="senha"><i class="icon-shield"></i></label>
-                <input type="password" name="senha" id="senha" placeholder="Senha" required/>
-            </div>
-            
-            <div class="grupo-de-formulario">
-                <label id="icone-telefone" for="telefone"><i class="icon-phone"></i></label>
-                <input type="text" name="numero_telefone" id="numero_telefone" placeholder="Telefone" required/>
-            </div>
-            
-            <div class="grupo-de-formulario">
-                <label id="icone-whatsapp" for="whatsapp"><i class="icon-whatsapp"></i></label>
-                <input type="checkbox" name="whatsapp" id="whatsapp" value="Sim"/>
-                <label for="whatsapp" class="checkbox">É WhatsApp?</label>
-            </div>
-            
-            <div class="sexo">
-                <input type="radio" value="Masculino" id="masculino" name="genero" checked/>
-                <label for="masculino" class="radio">Masculino</label>
-                <input type="radio" value="Feminino" id="feminino" name="genero" />
-                <label for="feminino" class="radio">Feminino</label>
-            </div>
-            <p>Ao clicar em Registrar, você concorda com nossos <a href="#">termos e condições</a>.</p>
-            <button type="submit" class="botao">Registrar</button>
-        </form>
+  <body>
+    <!-- Botão de login -->
+    <a href="{% url 'login' %}" class="login-button">Fazer Login</a>
+  </body>
+
+  <body>
+    <div class="testbox">
+      <h1>Cadastro</h1>
+
+      <form
+        action="{% url 'registrar' %}"
+        id="formulario-de-registro"
+        method="POST"
+      >
+        {% csrf_token %}
+        <div class="grupo-de-formulario">
+          <label id="icone-email" for="email"
+            ><i class="icon-envelope"></i
+          ></label>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder="Email"
+            required
+          />
+        </div>
+
+        <div class="grupo-de-formulario">
+          <label id="icone-nome" for="nome"><i class="icon-user"></i></label>
+          <input
+            type="text"
+            name="nome"
+            id="nome"
+            placeholder="Nome"
+            required
+          />
+        </div>
+
+        <div class="grupo-de-formulario">
+          <label id="icone-senha" for="senha"
+            ><i class="icon-shield"></i
+          ></label>
+          <input
+            type="password"
+            name="senha"
+            id="senha"
+            placeholder="Senha"
+            required
+          />
+        </div>
+
+        <div class="grupo-de-formulario">
+          <label id="icone-telefone" for="telefone"
+            ><i class="icon-phone"></i
+          ></label>
+          <input
+            type="text"
+            name="numero_telefone"
+            id="numero_telefone"
+            placeholder="Telefone"
+            required
+          />
+        </div>
+
+        <div class="grupo-de-formulario">
+          <label id="icone-whatsapp" for="whatsapp"
+            ><i class="icon-whatsapp"></i
+          ></label>
+          <input type="checkbox" name="whatsapp" id="whatsapp" value="True" />
+          <label for="whatsapp" class="checkbox">É WhatsApp?</label>
+        </div>
+
+        <div class="sexo">
+          <input
+            type="radio"
+            value="Masculino"
+            id="masculino"
+            name="genero"
+            checked
+          />
+          <label for="masculino" class="radio">Masculino</label>
+          <input type="radio" value="Feminino" id="feminino" name="genero" />
+          <label for="feminino" class="radio">Feminino</label>
+        </div>
+        <p>
+          Ao clicar em Registrar, você concorda com nossos
+          <a href="#">termos e condições</a>.
+        </p>
+        <button type="submit" class="botao">Registrar</button>
+      </form>
     </div>
 
     <script>
-        // Função para exibir a mensagem como um pop-up
-        function exibirMensagemPopUp(msg) {
-            // Crie um elemento de div para a mensagem pop-up
-            var popup = document.createElement('div');
-            popup.className = 'popup';
-            
-            // Crie um elemento de parágrafo para a mensagem
-            var mensagem = document.createElement('p');
-            mensagem.textContent = msg;
-            
-            // Crie um botão de fechar
-            var botaoFechar = document.createElement('button');
-            botaoFechar.textContent = 'Fechar';
-            
-            // Adicione a mensagem e o botão de fechar à div do pop-up
-            popup.appendChild(mensagem);
-            popup.appendChild(botaoFechar);
-            
-            // Adicione a div do pop-up ao corpo do documento
-            document.body.appendChild(popup);
-            
-            // Adicione um evento de clique ao botão de fechar
-            botaoFechar.addEventListener('click', function() {
-                // Remova o pop-up ao clicar no botão de fechar
-                document.body.removeChild(popup);
-            });
-        }
-        
-        // Exiba a mensagem quando a página for carregada
-        window.addEventListener('load', function() {
-            // A mensagem que você deseja exibir
-            var msg = "{{ msg }}"; // Substitua "{{ msg }}" pela mensagem que você deseja exibir
-            
-            // Verifique se a mensagem não está vazia antes de exibi-la
-            if (msg) {
-                exibirMensagemPopUp(msg);
-            }
+      // Função para exibir a mensagem como um pop-up
+      function exibirMensagemPopUp(msg) {
+        // Crie um elemento de div para a mensagem pop-up
+        var popup = document.createElement("div");
+        popup.className = "popup";
+
+        // Crie um elemento de parágrafo para a mensagem
+        var mensagem = document.createElement("p");
+        mensagem.textContent = msg;
+
+        // Crie um botão de fechar
+        var botaoFechar = document.createElement("button");
+        botaoFechar.textContent = "Fechar";
+
+        // Adicione a mensagem e o botão de fechar à div do pop-up
+        popup.appendChild(mensagem);
+        popup.appendChild(botaoFechar);
+
+        // Adicione a div do pop-up ao corpo do documento
+        document.body.appendChild(popup);
+
+        // Adicione um evento de clique ao botão de fechar
+        botaoFechar.addEventListener("click", function () {
+          // Remova o pop-up ao clicar no botão de fechar
+          document.body.removeChild(popup);
         });
+      }
+
+      // Exiba a mensagem quando a página for carregada
+      window.addEventListener("load", function () {
+        // A mensagem que você deseja exibir
+        var msg = "{{ msg }}"; // Substitua "{{ msg }}" pela mensagem que você deseja exibir
+
+        // Verifique se a mensagem não está vazia antes de exibi-la
+        if (msg) {
+          exibirMensagemPopUp(msg);
+        }
+      });
     </script>
 
+    {% comment %}
+    <script>
+      document.getElementById('formulario-de-registro').addEventListener('submit', function(event) {
+          event.preventDefault();
 
-    {% comment %} <script>
-        document.getElementById('formulario-de-registro').addEventListener('submit', function(event) {
-            event.preventDefault();
+          // Obter os valores dos campos
+          const tipoDeConta = document.querySelector('input[name="conta"]:checked').value;
+          const email = document.getElementById('email').value;
+          const nome = document.getElementById('nome').value;
+          const telefone = document.getElementById('telefone').value;
+          const senha = document.getElementById('senha').value;
+          const eWhatsApp = document.getElementById('whatsapp').checked ? 'Sim' : 'Não';
+          const genero = document.querySelector('input[name="genero"]:checked').value;
 
-            // Obter os valores dos campos
-            const tipoDeConta = document.querySelector('input[name="conta"]:checked').value;
-            const email = document.getElementById('email').value;
-            const nome = document.getElementById('nome').value;
-            const telefone = document.getElementById('telefone').value;
-            const senha = document.getElementById('senha').value;            
-            const eWhatsApp = document.getElementById('whatsapp').checked ? 'Sim' : 'Não';
-            const genero = document.querySelector('input[name="genero"]:checked').value;
-
-            // Agora você pode fazer algo com esses valores, como enviá-los para um servidor
-            console.log('Tipo de conta:', tipoDeConta);
-            console.log('Email:', email);
-            console.log('Nome:', nome);
-            console.log('Senha:', senha);
-            console.log('Telefone:', telefone);
-            console.log('É WhatsApp?', eWhatsApp);
-            console.log('Gênero:', genero); {% endcomment %}
-        {% comment %} });
-    </script> {% endcomment %}
+          // Agora você pode fazer algo com esses valores, como enviá-los para um servidor
+          console.log('Tipo de conta:', tipoDeConta);
+          console.log('Email:', email);
+          console.log('Nome:', nome);
+          console.log('Senha:', senha);
+          console.log('Telefone:', telefone);
+          console.log('É WhatsApp?', eWhatsApp);
+          console.log('Gênero:', genero); {% endcomment %}
+      {% comment %} });
+    </script>
+    {% endcomment %}
     <footer class="footer">
-        &copy; 2023 PromoVale. Todos os direitos reservados.
+      &copy; 2023 PromoVale. Todos os direitos reservados.
     </footer>
-</body>
+  </body>
 </html>

@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'promocao.apps.PromocaoConfig',  
     'mercado.apps.MercadoConfig',    
     'stories.apps.StoriesConfig',      
-    'contatos.apps.ContatosConfig',
     ]
 
 

@@ -5,9 +5,6 @@ class Telefone(models.Model):
 
     def __str__(self):
         return self.numero
-
-class WhatsApp(models.Model):
-    telefone = models.CharField(max_length=15)
     
     def __str__(self):
         return self.telefone
@@ -21,13 +18,7 @@ class Cliente(models.Model):
         null=True,
         verbose_name='Telefone'
     )
-    whatsapp = models.ForeignKey(
-        WhatsApp,
-        on_delete=models.SET_NULL,
-        blank=True,
-        null=True,
-        verbose_name='WhatsApp'
-    )
+    whatsapp = models.BooleanField(default=False)
     sexo = models.CharField(
         max_length=10,
         choices=[('masculino', 'Masculino'), ('feminino', 'Feminino')],
@@ -38,3 +29,5 @@ class Cliente(models.Model):
 
     def __str__(self):
         return self.nome
+    
+  

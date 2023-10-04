@@ -1,28 +1,92 @@
 <!DOCTYPE html>
-{% load static %}
-<html lang="pt">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil do Cliente</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/perfil.css' %}">
+    <title>Meu Perfil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #e25c0f;
+            color: #e25c0f;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffb30e;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .profile-picture {
+            max-width: 600px;
+            border-radius: 50%;
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <div class="profile-container">
-        <h1>Seu Perfil</h1>
-        <div class="profile-info">
-            <p><strong>Nome:</strong> {{ Cliente.nome }}</p>
-            <p><strong>Email:</strong> {{ Cliente.email }}</p>
-            <p><strong>telefone:</strong> {{ Cliente.telefone }}</p>
-            <!-- Adicione mais informações do usuário conforme necessário -->
+    <header>
+        <h1>Meu Perfil</h1>
+    </header>
+    <div class="container">
+        <div class="profile-picture">
+            <img src="Picsart_23-10-04_19-55-35-988.png" alt="Minha Foto de Perfil">
         </div>
-        <a href="{% url 'logout' %}" class="logout-link">Sair</a>
-        
-        <!-- Botão para a página de promoções -->
-        <a href="{% url 'promocoes' %}" class="promo-link">Ver Promoções</a>
+
+        <h2>Informações Pessoais</h2>
+        <p><strong>Nome:</strong> Fabrício Genie</p>
+        <p><strong>Email:</strong> fabríciolândia@email.com</p>
+        <p><strong>Telefone:</strong> (62) 98456-7890</p>
+
+        <h2>Biografia</h2>
+        <p>Somos um site especializado em vendas de produtos na promoção de liquidação </p>
+
+        <h2>Interesses</h2>
+        <ul>
+            <li>Promoções mais próximas de você</li>
+            <li>Venda de produtos, verduras, carnes e diversas outros conteúdos.</li>
+            <li>Tecnologia voltada ao seu futuro </li>
+        </ul>
     </div>
-    <footer class="footer">
-        &copy; 2023 PromoVale. Todos os direitos reservados.
-    </footer>
 </body>
+</html>
+
+        
+        <script src="" async defer></script>
+    </body>
 </html>

@@ -12,6 +12,7 @@ def cadastro(request):
 def cadastrar(request):
     if request.method == 'POST':
         # Captura dos dados do formulário
+        nome = request.POST["nome"]
         email = request.POST["email"]
         senha = request.POST["senha"]
         numero_telefone = request.POST["numero_telefone"]
@@ -26,12 +27,14 @@ def cadastrar(request):
             return render(request, 'cliente/cadastro.html', {'msg': msg})
 
         telefone_obj, created = Telefone.objects.get_or_create(numero=numero_telefone)
-        cliente = Cliente(email=email, senha_adicional=senha,
+        cliente = Cliente(nome=nome, email=email, senha_adicional=senha,
                           telefone=telefone_obj, whatsapp=whatsapp, sexo=sexo)
 
         try:
-            cliente.save()
-        except:
+            resultado = cliente.save()
+            print('resultado: ',resultado)
+        except Exception as error:
+            print('resultado com erro: ',error)
             msg = "Erro no cadastro, tente novamente"
             return render(request, 'cliente/cadastro.html', {'msg': msg})  
              
@@ -53,7 +56,7 @@ def fazer_login(request):
                 # Você pode adicionar lógica de autenticação aqui
                 print('logado')
                 # Redirecionar para a página inicial ou outra página de destino
-                return HttpResponseRedirect(reverse('pagina_inicial'))
+                return HttpResponseRedirect(reverse('perfil'))
             else:
                 # Retornar senha incorreta
                 msg = "Senha incorreta"

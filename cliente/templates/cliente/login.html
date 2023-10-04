@@ -13,18 +13,22 @@
         <link rel="stylesheet" type="text/css" href="/static/css/login.css">        
     </head>
     <body>
+        <!-- Botão de login -->
+        <a href="{% url 'registro' %}" class="login-button">registro</a>
+      </body>
+    <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="page">
-            <form method="POST" class="formLogin">
+            <form method="POST" class="formLogin" action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
                 <h1>Login</h1>
                 <p>Digite os seus dados de acesso no campo abaixo.</p>
                 <label for="email">E-mail</label>
-                <input type="email" placeholder="Digite seu e-mail" autofocus="true" />
+                <input type="email" id='email' name='email' placeholder="Digite seu e-mail" autofocus="true" />
                 <label for="password">Senha</label>
-                <input type="password" placeholder="Digite seu e-mail" />
+                <input type="password" id='senha' name='senha' placeholder="Digite seu e-mail" />
                 <a href="/">Esqueci minha senha</a>
                 <input type="submit" value="Acessar" class="btn" />
             </form>
