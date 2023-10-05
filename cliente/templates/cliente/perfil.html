@@ -1,63 +1,13 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+{% load static %}
 
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Perfil</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #e25c0f;
-            color: #e25c0f;
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #ffb30e;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            line-height: 1.6;
-        }
-        .profile-picture {
-            max-width: 600px;
-            border-radius: 50%;
-            margin: 0 auto;
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static '/css/perfil.css' %}">
+    <link rel="stylesheet" href="{% static '/css/perfil.css' %}">
 </head>
 <body>
     <header>
@@ -65,7 +15,7 @@
     </header>
     <div class="container">
         <div class="profile-picture">
-            <img src="Picsart_23-10-04_19-55-35-988.png" alt="Minha Foto de Perfil">
+            <img src="{% static '/imagem/logo_promo.png' %}" alt="Minha Foto de Perfil" width=200px >
         </div>
 
         <h2>Informações Pessoais</h2>
@@ -73,20 +23,7 @@
         <p><strong>Email:</strong> fabríciolândia@email.com</p>
         <p><strong>Telefone:</strong> (62) 98456-7890</p>
 
-        <h2>Biografia</h2>
-        <p>Somos um site especializado em vendas de produtos na promoção de liquidação </p>
-
-        <h2>Interesses</h2>
-        <ul>
-            <li>Promoções mais próximas de você</li>
-            <li>Venda de produtos, verduras, carnes e diversas outros conteúdos.</li>
-            <li>Tecnologia voltada ao seu futuro </li>
-        </ul>
+        <!-- Biografia e Interesses (comentados) -->
     </div>
 </body>
-</html>
-
-        
-        <script src="" async defer></script>
-    </body>
 </html>

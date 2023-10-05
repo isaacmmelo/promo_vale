@@ -5,9 +5,7 @@ class Telefone(models.Model):
 
     def __str__(self):
         return self.numero
-    
-    def __str__(self):
-        return self.telefone
+
 class Cliente(models.Model):
     email = models.EmailField(default='example@example.com')
     nome = models.CharField(max_length=150)

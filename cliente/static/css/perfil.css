@@ -1,26 +1,26 @@
 /* Estilo para o corpo da página */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #e25c0f;
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #FFD700, #FF6347);
 }
 
 /* Estilo para o cabeçalho */
 header {
-    background-color: #a13503;
-    color: #e2520f;
+    
+    color: #141312;
     text-align: center;
     padding: 20px;
 }
 
 /* Estilo para o contêiner principal */
 .container {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: 
-    #e61414;
+    background-color:  #c67c27e7;
     box-shadow: 0 0 10px rgba(247, 71, 1, 0.1);
     border-radius: 5px;
     margin-top: 20px;
@@ -36,10 +36,10 @@ p {
     line-height: 1.6;
 }
 
-/* Estilo para a imagem de perfil */
 .profile-picture {
-    max-width: 200px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    margin: 0 auto;
+    margin: 20px auto; /* Alterar a margem para ajustar a posição vertical */
     display: block;
 }

@@ -1,17 +1,16 @@
 from django.contrib import admin
-from .models import Cliente
+from .models import Cliente, Telefone
 
-# Register your models here.
-from .models import Cliente
+class TelefoneInline(admin.StackedInline):
+    model = Telefone
+    extra = 1
 
 class ClienteAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {"fields": ["nome"]}),
-        ( {"fields": ["pub_date"]}),
+        ( {"fields": ["email"]}),
     ]
-
-
-
+    inlines = [TelefoneInline]
 
 # ...
 admin.site.register(Cliente)
