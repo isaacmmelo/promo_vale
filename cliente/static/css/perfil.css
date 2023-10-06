@@ -43,3 +43,14 @@ p {
     margin: 20px auto; /* Alterar a margem para ajustar a posição vertical */
     display: block;
 }
+.logout-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #007BFF; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Cantos arredondados */
+    cursor: pointer; /* Cursor ao passar o mouse */
+}

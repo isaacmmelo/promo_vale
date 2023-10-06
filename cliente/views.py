@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout
 from .models import Cliente, Telefone
-
+## https://developer.mozilla.org/pt-BR/docs/Learn/Server-side/Django/Sessions
 
 def cadastro(request):
     return render(request, 'cliente/cadastro.html')
@@ -53,10 +53,13 @@ def fazer_login(request):
             cliente = Cliente.objects.get(email=email)
             if senha == cliente.senha_adicional:
                 # Logar com sucesso
-                # Você pode adicionar lógica de autenticação aqui
-                print('logado')
+                request.session['user_name'] = cliente.nome
+                request.session['user_email'] = cliente.email
+                request.session['user_id'] = cliente.pk
+
                 # Redirecionar para a página inicial ou outra página de destino
-                return HttpResponseRedirect(reverse('perfil'))
+                return render(request, 'cliente/perfil.html', {'cliente': cliente})
+                
             else:
                 # Retornar senha incorreta
                 msg = "Senha incorreta"

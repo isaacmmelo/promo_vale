@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'cliente.apps.ClienteConfig',
     'promocao.apps.PromocaoConfig',  
     'mercado.apps.MercadoConfig',    
-    'stories.apps.StoriesConfig',      
+    'stories.apps.StoriesConfig', 
     ]
 
 
@@ -60,7 +60,7 @@ ROOT_URLCONF = 'promovale.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- =============================================== -->
+    <!-- Document Title -->
+    <!-- =============================================== -->
+    <title>Promo Vale</title>
+
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- =============================================== -->
+    <!-- Stylesheets -->
+    <!-- =============================================== -->
+    <link href="static/theme.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- =============================================== -->
+    <!-- Main Content -->
+    <!-- =============================================== -->
+    <main class="main" id="top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" data-navbar-on-scroll="data-navbar-on-scroll">
+        <div class="container">
+          <a class="navbar-brand d-inline-flex" href="index.html">
+            <img class="d-inline-block" src="static/img/logo_img.png" alt="logo" width="70" />
+            <span class="text-1000 fs-5 fw-bold ms-2 text-gradient">PromoVale</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse border-top border-lg-0 my-2 mt-lg-0" id="navbarSupportedContent">
+            <div class="mx-auto pt-5 pt-lg-0 d-block d-lg-none d-xl-block"></div>
+            <form class="d-flex mt-8 mt-lg-0 ms-lg-auto ms-xl-0">
+              <button class="btn btn-white shadow-warning text-warning" type="submit"><i class="fas fa-user me-2"></i> 
+                <a href="{% url 'login' %}">Login</a>
+              </button>
+              <button class="btn btn-white shadow-warning text-warning" type="submit"><i class="fas fa-user me-2"></i> 
+                <a href="{% url 'registro' %}">Cadastrar</a>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <section class="py-5 overflow-hidden bg-primary" id="home">
+        <div class="container">
+          <div class="row flex-center">
+            <div class="col-md-3 col-lg-10 py-8 text-md-start text-center">
+              <h1 class="display-1 fs-md-5 fs-lg-6 fs-xl-6 text-light">Bem-vindo ao portal que vai revolucionar a forma como você economiza tempo e dinheiro!</h1>
+              <h1 class="text-800 mb-5 fs-3">
+                <br class="d-none d-xxl-block" />
+                Aqui, não poupamos esforços para oferecer as melhores promoções de supermercados e mercearias da sua região. Então, o que está esperando? Faça seu cadastro e ligue agora para descobri as melhores promoços!!!
+              </h1>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- =============================================== -->
+    <!-- End of Main Content -->
+    <!-- =============================================== -->
+
+    <!-- =============================================== -->
+    <!-- JavaScripts -->
+    <!-- =============================================== -->
+    {% comment %} <script src="vendors/@popperjs/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="assets/js/theme.js"></script> {% endcomment %}
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap" rel="stylesheet" />
+  </body>
+</html>

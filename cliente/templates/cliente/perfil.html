@@ -9,19 +9,39 @@
     <link rel="stylesheet" href="{% static '/css/perfil.css' %}">
     <link rel="stylesheet" href="{% static '/css/perfil.css' %}">
 </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Botão de Logout</title>
+    <style>
+        /* Estilize o botão de logout */
+        #logout-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Conteúdo da sua página aqui -->
+
+    <!-- Botão de logout -->
+    <a href="{% url 'login' %}" class="logout-button">Sair</a>
+</body
 <body>
     <header>
         <h1>Meu Perfil</h1>
     </header>
     <div class="container">
         <div class="profile-picture">
-            <img src="{% static '/imagem/logo_promo.png' %}" alt="Minha Foto de Perfil" width=200px >
+            <img src="{% static '/imagem/logo_promo.png' %}" alt="Minha Foto de Perfil" width="200px" style="position: absolute; top: 0; left: 0;">
         </div>
+      
 
         <h2>Informações Pessoais</h2>
-        <p><strong>Nome:</strong> Fabrício Genie</p>
-        <p><strong>Email:</strong> fabríciolândia@email.com</p>
-        <p><strong>Telefone:</strong> (62) 98456-7890</p>
+        <p><strong>Nome: </strong> {{ cliente.nome }} </p>
+        <p><strong>Email: </strong>{{ cliente.email }}</p>
+        <p><strong>Telefone: </strong> {{ cliente.telefone }}</p>
 
         <!-- Biografia e Interesses (comentados) -->
     </div>
