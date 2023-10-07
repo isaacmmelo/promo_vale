@@ -3,7 +3,7 @@ from django.db import models
 class Stories(models.Model):
     titulo = models.CharField(max_length=100)
     descricao = models.TextField()
-    foto = models.FileField(upload_to='stories/', null=True, blank=True)
+    foto = models.FileField(upload_to='stories_images/', null=True, blank=True)
     data_publicacao = models.DateTimeField(auto_now_add=True)
     mercado = models.ForeignKey("mercado.Mercado", on_delete=models.CASCADE)
     

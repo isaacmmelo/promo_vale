@@ -12,23 +12,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página com Botão de Logout</title>
+    <title>Página com Botões de Ação</title>
     <style>
-        /* Estilize o botão de logout */
-        #logout-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
+        /* Estilize o botão "Sair" */
+        .logout-button {
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        /* Estilize o botão "Promoções" */
+        .promo-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <!-- Conteúdo da sua página aqui -->
-
-    <!-- Botão de logout -->
+    <!-- Botões de ação -->
     <a href="{% url 'login' %}" class="logout-button">Sair</a>
-</body
-<body>
+    {% comment %} <a href="{% url 'promocao.promocoes' %}" class="promo-button">Promoções</a> {% endcomment %}
+</body>
     <header>
         <h1>Meu Perfil</h1>
     </header>

@@ -19,4 +19,4 @@ def promocoes(request):
     ]
 
     # Renderiza a página de promoções e passa a lista de promoções para o template
-    return render(request, 'cliente/promocoes.html', {'promocoes': promocoes})
+    return render(request, 'promocao/index.html', {'promocoes': promocoes})

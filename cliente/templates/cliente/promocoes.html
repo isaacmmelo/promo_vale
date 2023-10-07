@@ -13,7 +13,7 @@
         <nav>
             <ul>
                 <li><a href="/">Página Inicial</a></li>
-                <li><a href="/usuario/perfil/">Seu Perfil</a></li>
+                <li><a href="{% url 'cliente/perfil.html' %}">Seu Perfil</a></li>
                 <!-- Outros links de navegação -->
             </ul>
         </nav>
@@ -40,7 +40,7 @@
         </ul>
 
         <!-- Link para a página de promoções -->
-        <a href="{% url 'promocoes' %}" class="promo-link">Ver Promoções</a>
+        <a href="{% url 'promocoes.html' %}" class="promo-link">Ver Promoções</a>
     </div>
 
     <footer class="footer">

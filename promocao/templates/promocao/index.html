@@ -5,17 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promoções</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
     <!-- Seus estilos CSS aqui -->
 </head>
 <body>
     <header>
         <!-- Barra de navegação (opcional) -->
         <nav>
-            <ul>
-                <li><a href="/">Página Inicial</a></li>
-                <li><a href="/usuario/perfil/">Seu Perfil</a></li>
-                <!-- Outros links de navegação -->
-            </ul>
+              <button class="btn btn-white shadow-warning text-warning" type="submit"><i class="fas fa-user me-2"></i> 
+              <a href="{% url 'perfil' %}">Seu Perfil</a>
+              </button>
         </nav>
     </header>
     

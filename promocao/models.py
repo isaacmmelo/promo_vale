@@ -6,7 +6,7 @@ class Promocao(models.Model):
     data_inicio = models.DateField()
     data_fim = models.DateField()
     mercado = models.ForeignKey("mercado.Mercado", on_delete=models.CASCADE)
-    
+    image = models.ImageField(upload_to='promocoes_images/')
 
     def __str__(self):
         return self.titulo
