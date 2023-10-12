@@ -58,7 +58,8 @@ def fazer_login(request):
                 request.session['user_id'] = cliente.pk
 
                 # Redirecionar para a página inicial ou outra página de destino
-                return render(request, 'cliente/perfil.html', {'cliente': cliente})
+                #return render(request, '/promocao/index.html', {'cliente': cliente})
+                return redirect('/promocao/')
                 
             else:
                 # Retornar senha incorreta

@@ -1,6 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
+from .models import Promocao
+from mercado.models import Mercado
 
-def promocoes(request):
+""" def promocoes(request):
+    #Pegar os dados de usuário da sessão
+
     # Lógica para obter promoções do banco de dados ou de outra fonte de dados
     promocoes = [
         {
@@ -19,4 +23,15 @@ def promocoes(request):
     ]
 
     # Renderiza a página de promoções e passa a lista de promoções para o template
-    return render(request, 'promocao/index.html', {'promocoes': promocoes})
+    return render(request, 'promocao/index.html', {'promocoes': promocoes}) """
+
+def promocoes(request):
+    promocoes_todas = Promocao.objects
+    mercado_todos = Mercado.objects
+    
+    saida={"lista_promocao": promocoes_todas.all, "lista_mercado": mercado_todos}
+    return render (request, 'promocao/index.html', saida)
+
+    
+   
+    

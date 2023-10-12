@@ -1,49 +1,412 @@
-<!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promoções</title>
-    <link rel="stylesheet" href="{% static 'index.css' %}">
-    <!-- Seus estilos CSS aqui -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- ===============================================-->
+  <!--    Document Title-->
+  <!-- ===============================================-->
+  <title> Promo Vale | Responsive, Ecommerce &amp; Business Templatee</title>
+
+
+  <!-- ===============================================-->
+  <!--    Favicons-->
+  <!-- ===============================================-->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+  <link rel="manifest" href="assets/img/favicons/manifest.json">
+  <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- ===============================================-->
+  <!--    Stylesheets-->
+  <!-- ===============================================-->
+  <link href="{% static '/css/theme.css' %}" rel="stylesheet" />
+
 </head>
+
 <body>
-    <header>
-        <!-- Barra de navegação (opcional) -->
-        <nav>
-              <button class="btn btn-white shadow-warning text-warning" type="submit"><i class="fas fa-user me-2"></i> 
-              <a href="{% url 'perfil' %}">Seu Perfil</a>
-              </button>
-        </nav>
-    </header>
-    
-    <div class="promo-container">
-        <h1>Promoções</h1>
+
+ 
+
+  <!-- ===============================================-->
+  <!--    Main Content-->
+  <!-- ===============================================-->
+  <main class="main" id="top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" data-navbar-on-scroll="data-navbar-on-scroll">
+      <div class="container"><a class="navbar-brand d-inline-flex" href="index.html">
+
+          <img class="d-inline-block"
+          src="{% static 'img\logo.img.png' %}" alt="logo"
+            width="70" height="70" />
+
+          <span class="text-1000 fs-5 fw-bold ms-2 text-gradient">PromoVale</span></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+            class="navbar-toggler-icon"> </span></button>
+        <div class="collapse navbar-collapse border-top border-lg-0 my-2 mt-lg-0" id="navbarSupportedContent">
+          <div class="mx-auto pt-5 pt-lg-0 d-block d-lg-none d-xl-block">
+
+          </div>
+          <form class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0">
+        </div>
+
+        <a href="/login.html">
+        </a>
+
+        <a href="/login.html">
+          </form>
+      </div>
+      </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+    <html lang="en-US" dir="ltr">
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+      <!-- ===============================================-->
+      <!--    Document Title-->
+      <!-- ===============================================-->
+      <title>Foodwagon | Responsive, Ecommerce &amp; Business Templatee</title>
+
+
+      <!-- ===============================================-->
+      <!--    Favicons-->
+      <!-- ===============================================-->
+      <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+      <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+      <link rel="manifest" href="assets/img/favicons/manifest.json">
+      <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+      <meta name="theme-color" content="#ffffff">
+
+
+      <!-- ===============================================-->
+      <!--    Stylesheets-->
+      <!-- ===============================================-->
+      <link href="assets/css/theme.css" rel="stylesheet" />
+
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="py-8 overflow-hidden">
+
+        <div class="container">
+          <div class="row flex-center mb-6">
+            <div class="col-lg-7">
+              <h5 class="fw-bold fs-3 fs-lg-5 lh-sm text-center text-lg-start">Promoções recentes</h5>
+            </div>
+            <div class="col-lg-4 text-lg-end text-center"><a class="btn btn-lg text-800 me-2" href="#" role="button">VER
+                TODOS <i class="fas fa-chevron-right ms-2"></i></a></div>
+            <div class="col-lg-auto position-relative">
+              <button class="carousel-control-prev s-icon-prev carousel-icon" type="button"
+                data-bs-target="#carouselSearchByFood" data-bs-slide="prev"><span
+                  class="carousel-control-prev-icon hover-top-shadow" aria-hidden="true"></span><span
+                  class="visually-hidden">Previous</span></button>
+              <button class="carousel-control-next s-icon-next carousel-icon" type="button"
+                data-bs-target="#carouselSearchByFood" data-bs-slide="next"><span
+                  class="carousel-control-next-icon hover-top-shadow" aria-hidden="true"></span><span
+                  class="visually-hidden">Next</span></button>
+            </div>
+          </div>
+
+          {% comment %} {% for p in lista_mercado %}
+          <div class="row flex-center">
+            <div class="col-12">
+              <div class="carousel slide" id="carouselSearchByFood" data-bs-touch="false" data-bs-interval="false">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="10000">
+                    <div class="row h-100 align-items-center">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle">
+                          <img class="img-fluid rounded-circle h-100"src="{{p.image.url}}" alt="..." width="250" height="350" />
+                          
+                            
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Sonita </h5>
+                          </div>
+                        </div>
+                      </div>
+                      {% endfor %} {% endcomment %}
+                      
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/burger.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Marcus</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/noodles.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Super_dez</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/sub-sandwich.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Gauchos</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/chowmein.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Super_Leste </h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/steak.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Armazen</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="5000">
+                    <div class="row h-100 align-items-center">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/search-pizza.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">pizza</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/burger.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Burger</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/noodles.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Noodles</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/sub-sandwich.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Sub-sandwiches</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/chowmein.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Chowmein</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/steak.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Steak</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <div class="row h-100 align-items-center">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/search-pizza.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">pizza</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/burger.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Burger</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/noodles.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Noodles</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/sub-sandwich.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Sub-sandwiches</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/chowmein.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Chowmein</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/steak.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Steak</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="row h-100 align-items-center">
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/search-pizza.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">pizza</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/burger.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Burger</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/noodles.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Noodles</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/sub-sandwich.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Sub-sandwiches</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/chowmein.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Chowmein</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100"
+                            src="assets/img/gallery/steak.png" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Steak</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row h-50 gx-2 mt-0">
+            {% for p in lista_promocao %}
+              <div class="col-sm-6 col-lg-3 mb-3 mb-md-0 h-100 pb-4">
+                <div class="card card-span h-100">
+                  <div class="position-relative">
+                    <img class="img-fluid rounded-3" src="{{p.image.url}}" alt="{{p.descricao}}" width="250" height="350" />
+
+                    <div class="card-body px-0">
+                      <h5 class="fw-bold text-1000 text-truncate">{{ p.titulo }}</h5>
+                      <span class="badge bg-soft-danger py-2 px-3">
+                        <span class="fs-1 text-danger">{{ p.data_fim }}</span>
+                      </span>
+                    </div>
+                    <a class="stretched-link" href="#"></a>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
         
-        <!-- Lista de promoções -->
-        <ul class="promo-list">
-            <li>
-                <h2>Nome da Promoção 1</h2>
-                <p>Descrição da Promoção 1.</p>
-                <p>Preço com desconto: R$ XX,XX</p>
-                <a href="#">Detalhes</a>
-            </li>
-            <li>
-                <h2>Nome da Promoção 2</h2>
-                <p>Descrição da Promoção 2.</p>
-                <p>Preço com desconto: R$ XX,XX</p>
-                <a href="#">Detalhes</a>
-            </li>
-            <!-- Adicione mais promoções conforme necessário -->
-        </ul>
+            
+        
 
-        <!-- Link para a página de promoções -->
-        <a href="{% url 'promocoes' %}" class="promo-link">Ver Promoções</a>
-    </div>
 
-    <footer class="footer">
-        &copy; 2023 PromoVale. Todos os direitos reservados.
-    </footer>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+
+
+      <!-- ===============================================-->
+      <!--    JavaScripts-->
+      <!-- ===============================================-->
+      <script src="vendors/@popperjs/popper.min.js"></script>
+      <script src="vendors/bootstrap/bootstrap.min.js"></script>
+      <script src="vendors/is/is.min.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+      <script src="vendors/fontawesome/all.min.js"></script>
+      <script src="assets/js/theme.js"></script>
+
+      <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap"
+        rel="stylesheet">
 </body>
+
 </html>
+
+<!-- ============================================-->
+<!-- <section> begin ============================-->

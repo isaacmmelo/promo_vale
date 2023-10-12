@@ -40,8 +40,7 @@
 </head>
 <body>
     <!-- Botões de ação -->
-    <a href="{% url 'login' %}" class="logout-button">Sair</a>
-    {% comment %} <a href="{% url 'promocao.promocoes' %}" class="promo-button">Promoções</a> {% endcomment %}
+    <a href="{% url 'login' %}" class="logout-button">Sair</a>    
 </body>
     <header>
         <h1>Meu Perfil</h1>
@@ -50,8 +49,6 @@
         <div class="profile-picture">
             <img src="{% static '/imagem/logo_promo.png' %}" alt="Minha Foto de Perfil" width="200px" style="position: absolute; top: 0; left: 0;">
         </div>
-      
-
         <h2>Informações Pessoais</h2>
         <p><strong>Nome: </strong> {{ cliente.nome }} </p>
         <p><strong>Email: </strong>{{ cliente.email }}</p>
