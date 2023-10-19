@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Perfil</title>
     <link rel="stylesheet" href="{% static '/css/perfil.css' %}">
-    <link rel="stylesheet" href="{% static '/css/perfil.css' %}">
+    
 </head>
 <head>
     <meta charset="UTF-8">
@@ -38,10 +38,12 @@
         }
     </style>
 </head>
-<body>
+<div>
     <!-- Botões de ação -->
     <a href="{% url 'login' %}" class="logout-button">Sair</a>    
-</body>
+    <!-- Botões de ação -->
+    <a href="http://192.168.206.215:8000/promocao" class="promo-button">Promocao</a>    
+</div>
     <header>
         <h1>Meu Perfil</h1>
     </header>

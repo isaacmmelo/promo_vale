@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import Mercado  # Importe o modelo de Mercado 
 
 def detalhes_mercado(request, pk):

@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- =============================================== -->
+    <!-- Document Title -->
+    <!-- =============================================== -->
+    <title>Promo Vale | Responsive, Ecommerce &amp; Business Templatee</title>
+
+    <!-- =============================================== -->
+    <!-- Favicons -->
+    <!-- =============================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico" />
+    <link rel="manifest" href="assets/img/favicons/manifest.json" />
+    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- =============================================== -->
+    <!-- Stylesheets -->
+    <!-- =============================================== -->
+    <link href="{% static '/css/theme.css' %}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- =============================================== -->
+    <!-- Main Content -->
+    <!-- =============================================== -->
+    <main class="main" id="top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" data-navbar-on-scroll="data-navbar-on-scroll">
+        <div class="container">
+          <a class="navbar-brand d-inline-flex" href="index.html">
+            <img class="d-inline-block" src="{% static 'img\logo.img.png' %}" alt="logo" width="70" height="70" />
+
+            <span class="text-1000 fs-5 fw-bold ms-2 text-gradient">PromoVale</span>
+          </a>
+          <a href="http://192.168.206.215:8000/promocao"/>
+            <button class="profile-button">promoção</button>
+          </a>
+            <style>
+                .profile-button {
+                    background-color: #007BFF;
+                    color: #fff;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 5px; /* Distância do topo da tela */
+                    right: 5px; /* Distância da direita da tela */
+                }
+
+                .profile-button:hover {
+                    background-color: #0056b3;
+                }
+            </style>  
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        </div>
+      </nav>
+
+      <html lang="en-US" dir="ltr">
+        <body>
+          <meta charset="utf-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+          <!-- =============================================== -->
+          <!-- Document Title -->
+          <!-- =============================================== -->
+          <title>Promo Vale | Responsive, Ecommerce &amp; Business Templatee</title>
+
+          <link href="assets/css/theme.css" rel="stylesheet" />
+
+          <!-- ============================================ -->
+          <!-- <section> begin ============================ -->
+          <section class="py-8 overflow-hidden">
+            <div class="container">
+              <div class="row h-50 gx-2 mt-0">
+                {% for p in lista_promocao %}
+                  <div class="col-sm-6 col-lg-3 mb-3 mb-md-0 h-100 pb-4">
+                    <div class="card card-span h-100">
+                      <div class="position-relative">
+                        <img class="img-fluid rounded-3" src="{{ p.image.url }}" alt="{{ p.descricao }}" width="250" height="350" />
+
+                        <div class="card-body px-0">
+                          <h5 class="fw-bold text-1000 text-truncate">{{ p.titulo }}</h5>
+                          <span class="badge bg-soft-danger py-2 px-3"><span class="fs-1 text-danger">{{ p.data_fim }}</span></span>
+                        </div>
+                        <a class="stretched-link" href="#"></a>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+
+            <!-- end of .container -->
+          </section>
+       
+          <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap" rel="stylesheet" />
+        </body>
+      </html>
+
+      <!-- ============================================ -->
+      <!-- <section> begin ============================ -->
+    </main>
+  </body>
+</html>

@@ -76,9 +76,14 @@ def fazer_login(request):
 
 def perfil(request):
     # A função de perfil requer que o usuário esteja autenticado
-    return render(request, 'cliente/perfil.html')
+    id = request.session['user_id']
+    cliente = Cliente.objects.get(id=id)
+    saida = {"cliente": cliente}
+    return render(request, 'cliente/perfil.html', saida)
 
 
 def fazer_logout(request):
-    logout(request)
+    request.session['user_name'] = ''
+    request.session['user_email'] = ''
+    request.session['user_id'] = ''
     return redirect('cliente/login.html')

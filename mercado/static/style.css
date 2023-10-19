@@ -66,9 +66,6 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
-  .card-span:hover img {
-    transform: scale(1.1);
-}
   hr {
     margin: 1rem 0;
     color: #EEEEEE;
@@ -18430,6 +18427,9 @@
     -webkit-transform: translate3d(-50%, -50%, 0);
     transform: translate3d(-50%, -50%, 0);
   }
+  .card-span:hover img {
+    transform: scale(1.1);
+}
 
   .input-group-icon {
     position: relative;
